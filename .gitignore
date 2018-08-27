@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 
+
 # dependencies
 /node_modules
 
@@ -33,7 +34,7 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
-
+/.firebase/
 # System Files
 .DS_Store
 Thumbs.db

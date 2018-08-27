@@ -10,17 +10,9 @@
   <style>
     app-root {
       display: block;
-      background-color: red;
-      width: 200px;
-      height: 200px;
     }
   </style>
-  <script type="module">
-    import {upgradeElement} from './worker-dom/index.mjs';
-    const root = document.querySelector('div[ng-worker-app]');
-    console.log(root);
-    upgradeElement(root, './worker-dom/worker.mjs')
-  </script>
+
 </head>
 <body>
 
