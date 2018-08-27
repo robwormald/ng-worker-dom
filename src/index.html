@@ -7,8 +7,23 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    app-root {
+      display: block;
+      background-color: red;
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+  <script type="module">
+    import {upgradeElement} from './worker-dom/index.mjs';
+    const root = document.querySelector('div[ng-worker-app]');
+    console.log(root);
+    upgradeElement(root, './worker-dom/worker.mjs')
+  </script>
 </head>
 <body>
-  <app-root></app-root>
+
+  <div ng-worker-app="worker-app" src="./worker-app/main.js"><app-root></app-root></div>
 </body>
 </html>

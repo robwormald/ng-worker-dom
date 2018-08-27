@@ -3,10 +3,23 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+declare var importScripts;
+
 
 if (environment.production) {
   enableProdMode();
 }
+load();
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.log(err));
+
+
+function load() {
+  importScripts('http://localhost:4200/zone.js');
+  platformBrowserDynamic().bootstrapModule(AppModule)
+    .then(moduleRef => {
+      console.log(moduleRef);
+    })
+    .catch(err => console.log(err));
+}
+
+

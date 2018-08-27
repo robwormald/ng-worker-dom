@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'worker-app';
+  name = 'worker-app';
+  constructor(private cdr: ChangeDetectorRef) {}
+  changeName(name: string) {
+    this.name = name;
+  }
 }
